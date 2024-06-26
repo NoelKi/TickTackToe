@@ -1,13 +1,85 @@
+body {
+    background-color: #323232;
+    font-family: 'Open Sans', sans-serif;
+    color: white; /* optional, damit die Schrift auf dem dunklen Hintergrund besser lesbar ist */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
 table {
     border-collapse: collapse;
-    width: 200px;
-    height: 200px;
+    position: relative;
 }
 
 td {
-    border: 1px solid black;
+    width: 100px;
+    height: 100px;
     text-align: center;
     vertical-align: middle;
     font-size: 2em;
     cursor: pointer;
+    color: white; /* optional, damit die X und O besser lesbar sind */
+    border: 5px solid white;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    position: relative;
+}
+
+td:hover {
+    background-color: #505050;
+    border-radius: 50%;
+    margin: -10px;
+}
+
+table td {
+    border: 5px solid rgb(255, 255, 255); 
+}
+table tr:first-child td {
+    border-top: 0;
+}
+table tr td:first-child {
+    border-left: 0;
+}
+table tr:last-child td {
+    border-bottom: 0;
+}
+table tr td:last-child {
+    border-right: 0;
+}
+.cross, .circle {
+    width: 80%;
+    height: 80%;
+}
+
+.cross {
+    stroke: white;
+    stroke-width: 10;
+    stroke-linecap: round;
+}
+
+.circle {
+    fill: none;
+    stroke: white;
+    stroke-width: 10;
+}
+
+.animate-circle, .animate-cross {
+    stroke-dasharray: 251.2;
+    stroke-dashoffset: 251.2;
+    animation: draw 0.4s linear forwards;
+}
+
+@keyframes draw {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+.winner-line {
+    position: absolute;
+    stroke: gold;
+    stroke-width: 10;
+    stroke-linecap: round;
 }
