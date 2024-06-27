@@ -96,8 +96,8 @@ function drawWinnerLine(winningCombination) {
     const [a, b, c] = winningCombination;
 
     // Berechne die Startkoordinaten (x1, y1)
-    const startX = (a % 3) * (cellSize + padding) + (cellSize / 2);
-    const startY = Math.floor(a / 3) * (cellSize + padding) + (cellSize / 2);
+    const startX = (a % 3) * (cellSize + padding)+ (cellSize / 2);
+    const startY = Math.floor(a / 3) *  (cellSize + padding) + (cellSize / 2);
 
     // Berechne die Endkoordinaten (x2, y2)
     const endX = (c % 3) * (cellSize + padding) + (cellSize / 2);
@@ -114,7 +114,7 @@ function drawWinnerLine(winningCombination) {
     // Erstelle das SVG-Element und füge die Linie hinzu
     const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     svg.setAttribute("viewBox", `0 0 ${3 * (cellSize + padding)} ${3 * (cellSize + padding)}`);
-    svg.setAttribute("style", "position: relative; top: -300px; left: 0; width: 100%; height: 100%; pointer-events: none;");
+    svg.setAttribute("style", "position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;");
     svg.appendChild(line);
 
     // Füge das SVG-Element zum Container hinzu

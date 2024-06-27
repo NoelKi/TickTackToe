@@ -59,6 +59,10 @@ table tr td:last-child {
     stroke-linecap: round;
 }
 
+#container {
+    position: relative;
+}
+
 .circle {
     fill: none;
     stroke: white;
